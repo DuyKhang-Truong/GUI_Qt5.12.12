@@ -1,0 +1,14 @@
+debug/accesstonet.o
+debug/astaralgorithm.o
+debug/json.o
+debug/main.o
+debug/mainwindow.o
+debug/mymaplayers.o
+debug/mytcpclient.o
+debug/radarscan.o
+debug/qrc_qml.o
+debug/qrc_resourceRadarScan.o
+debug/moc_accesstonet.o
+debug/moc_mainwindow.o
+debug/moc_mymaplayers.o
+debug/moc_mytcpclient.o

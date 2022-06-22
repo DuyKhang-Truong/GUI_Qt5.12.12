@@ -1,0 +1,1782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1070</width>
+    <height>780</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Car Dashboard</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources/qml.qrc">
+    <normaloff>:/image/car.ico</normaloff>:/image/car.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1071</width>
+      <height>780</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(43, 71, 106, 255), stop:1 rgba(67, 53, 91, 255));
+
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>740</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_pageB">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/back.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_pageN">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/next.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="myMapLayers" name="graphicsView_mapLayers">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>701</width>
+        <height>460</height>
+       </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(255, 255, 255, 0);
+border-radius: 7px;
+border: 5px solid rgb(75, 85, 117);
+
+</string>
+      </property>
+      <property name="backgroundBrush">
+       <brush brushstyle="NoBrush">
+        <color alpha="255">
+         <red>0</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_currentPos">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>480</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <property name="text">
+       <string>X = 0, Y = 0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_horn">
+      <property name="geometry">
+       <rect>
+        <x>565</x>
+        <y>480</y>
+        <width>90</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/horn.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_frontLight">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>480</y>
+        <width>90</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/light.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_clearError">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>575</y>
+        <width>90</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/clearError.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_speedDisplay">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>525</y>
+        <width>120</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Dir">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>565</x>
+        <y>575</y>
+        <width>90</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/dir.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_cirSpd">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>525</y>
+        <width>120</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px;
+color: rgb(255, 255, 255);
+font: 25 14pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 0)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_dim">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>600</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>km/h</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_speed">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>550</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>36</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+        <stylestrategy>PreferAntialias</stylestrategy>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 63 36pt &quot;Source Sans Pro SemiBold&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_speed">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>520</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 15px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>RS Speed</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_speed">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>560</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 30);
+color: rgb(255, 255, 255);
+font: 25 10pt &quot;Calibri Light&quot;;</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_speed">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>570</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="minimum">
+       <number>-25</number>
+      </property>
+      <property name="maximum">
+       <number>25</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_turnSignalLeft">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>525</y>
+        <width>75</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/turnLeft.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_turnSignalRight">
+      <property name="geometry">
+       <rect>
+        <x>485</x>
+        <y>525</y>
+        <width>75</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/turnRight.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Straight">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>480</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/straight.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Left">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>480</y>
+        <width>75</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/left.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Right">
+      <property name="geometry">
+       <rect>
+        <x>485</x>
+        <y>480</y>
+        <width>75</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/right.png);
+border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_steeringWheel">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>650</y>
+        <width>221</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/steeringWheel.png);
+border-radius: 30px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 30);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_autoRun">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>480</y>
+        <width>105</width>
+        <height>105</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string>AUTO</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_start">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>480</y>
+        <width>105</width>
+        <height>105</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string>START</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_stop">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>590</y>
+        <width>105</width>
+        <height>105</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 30);
+</string>
+      </property>
+      <property name="text">
+       <string>STOP</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_steeringLeft">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>660</y>
+        <width>40</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/minusSteering.png);
+border-radius: 20px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_steeringRight">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>660</y>
+        <width>40</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/image/plusSteering.png);
+border-radius: 20px;
+background-color: rgba(243, 243, 243, 30);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_steering">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>620</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Steering</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_resetPos">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>660</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #ff0000;
+border-radius: 4px;
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView_radarScan">
+      <property name="geometry">
+       <rect>
+        <x>755</x>
+        <y>10</y>
+        <width>250</width>
+        <height>460</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(255, 255, 255, 0);
+border-radius: 10px;
+border: 5px solid rgb(75, 85, 117);
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblVel">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>505</y>
+        <width>61</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font:100 10pt &quot;Source Sans Pro SemiBold&quot;;
+background-color: rgba(255, 255, 255, 0);
+</string>
+      </property>
+      <property name="text">
+       <string>TTC</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTTC">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>475</y>
+        <width>51</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(255, 255, 255);
+font: 100 10pt &quot;Source Sans Pro SemiBold&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>TTC</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_SPSpeed">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>530</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>SPSpd</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Dir">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>730</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dir</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_steering">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>610</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 15px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>RS Steering</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider_steering">
+      <property name="geometry">
+       <rect>
+        <x>764</x>
+        <y>660</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="minimum">
+       <number>-70</number>
+      </property>
+      <property name="maximum">
+       <number>70</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_autoSteering">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>590</y>
+        <width>105</width>
+        <height>105</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="text">
+       <string>STEERING</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_destination">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>20</y>
+        <width>301</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+color: rgb(40, 133, 80);
+font: 100 12pt &quot;Source Sans Pro SemiBold&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Destination</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_checkDes">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>490</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_open">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>660</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>OPEN</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_pixel">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>520</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox_comUart">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>700</y>
+        <width>79</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 10px;
+color: rgb(255, 255, 255);
+font: 25 10pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+     </widget>
+     <zorder>groupBox_speedDisplay</zorder>
+     <zorder>label</zorder>
+     <zorder>pushButton_pageB</zorder>
+     <zorder>pushButton_pageN</zorder>
+     <zorder>graphicsView_mapLayers</zorder>
+     <zorder>label_currentPos</zorder>
+     <zorder>pushButton_horn</zorder>
+     <zorder>pushButton_frontLight</zorder>
+     <zorder>pushButton_clearError</zorder>
+     <zorder>pushButton_Dir</zorder>
+     <zorder>label_cirSpd</zorder>
+     <zorder>label_dim</zorder>
+     <zorder>label_speed</zorder>
+     <zorder>pushButton_speed</zorder>
+     <zorder>textEdit_speed</zorder>
+     <zorder>horizontalSlider_speed</zorder>
+     <zorder>pushButton_turnSignalLeft</zorder>
+     <zorder>pushButton_turnSignalRight</zorder>
+     <zorder>label_Straight</zorder>
+     <zorder>label_Left</zorder>
+     <zorder>label_Right</zorder>
+     <zorder>label_steeringWheel</zorder>
+     <zorder>pushButton_autoRun</zorder>
+     <zorder>pushButton_start</zorder>
+     <zorder>pushButton_stop</zorder>
+     <zorder>pushButton_steeringLeft</zorder>
+     <zorder>pushButton_steeringRight</zorder>
+     <zorder>label_steering</zorder>
+     <zorder>pushButton_resetPos</zorder>
+     <zorder>graphicsView_radarScan</zorder>
+     <zorder>lblVel</zorder>
+     <zorder>lblTTC</zorder>
+     <zorder>label_SPSpeed</zorder>
+     <zorder>label_Dir</zorder>
+     <zorder>pushButton_steering</zorder>
+     <zorder>horizontalSlider_steering</zorder>
+     <zorder>pushButton_autoSteering</zorder>
+     <zorder>label_destination</zorder>
+     <zorder>label_checkDes</zorder>
+     <zorder>pushButton_open</zorder>
+     <zorder>label_pixel</zorder>
+     <zorder>comboBox_comUart</zorder>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="pushButton_page2B">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/back.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_page2N">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/next.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>30</y>
+        <width>441</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 8px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string>Network Interface</string>
+      </property>
+      <widget class="QComboBox" name="comboBox_Interface">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>30</y>
+         <width>30</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;</string>
+       </property>
+       <property name="text">
+        <string>IP: </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_LocalIP">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>30</y>
+         <width>150</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;</string>
+       </property>
+       <property name="text">
+        <string>255.255.255.255</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="button_Refresh">
+       <property name="geometry">
+        <rect>
+         <x>337</x>
+         <y>30</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_message">
+      <property name="geometry">
+       <rect>
+        <x>279</x>
+        <y>189</y>
+        <width>441</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 8px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string>Message</string>
+      </property>
+      <widget class="QTextBrowser" name="textBrowser_TcpClientMessage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>441</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 8px;
+</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_topic">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>350</y>
+         <width>50</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Topic:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_topic">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>350</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;</string>
+       </property>
+       <property name="editable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="button_TcpClientSend">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>350</y>
+         <width>161</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 14pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Subcribe topic</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_clientConnect">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>110</y>
+        <width>441</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 8px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string>Client Connect to</string>
+      </property>
+      <widget class="QLabel" name="label_targetIP">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>30</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;</string>
+       </property>
+       <property name="text">
+        <string>IP:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_TcpClientTargetIP">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>150</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>150</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_targetPort">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>30</y>
+         <width>40</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-right-radius: 0px;
+border-bottom-right-radius: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Port:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_TcpClientTargetPort">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>30</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-top-left-radius: 0px;
+border-bottom-left-radius: 0px;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="button_TcpClient">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>30</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_TcpClientSend">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>590</y>
+        <width>441</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>241</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 8px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>730</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>750</y>
+        <width>63</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_page3B">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/back.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_page3N">
+      <property name="geometry">
+       <rect>
+        <x>1030</x>
+        <y>0</y>
+        <width>41</width>
+        <height>751</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/NextAndBack/next.png);
+background-color: rgba(255, 255, 255, 0);
+border:  0px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>10</y>
+        <width>221</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QComboBox" name="comboBox_NMEA">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+color: rgb(255, 255, 255);
+font: 25 10pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>71</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;</string>
+       </property>
+       <property name="text">
+        <string>NMEA</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_ctrlNMEA">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>40</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>DISABLE</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_FREQ">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+color: rgb(255, 255, 255);
+font: 25 10pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_cfgFrq">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>80</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>SEND</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_close">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>120</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>CLOSE</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_UART">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>10</y>
+         <width>16</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>290</y>
+        <width>811</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;
+background-color: rgba(243, 243, 243, 30)</string>
+      </property>
+      <property name="title">
+       <string>Steering Driver Control</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_svSteeringON">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>50</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>SERVO ON</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_svSteeringOFF">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>50</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>13</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>SERVO OFF</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>120</y>
+         <width>631</width>
+         <height>151</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_closeSV">
+       <property name="geometry">
+        <rect>
+         <x>700</x>
+         <y>60</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>CLOSE</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_comServo">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>20</y>
+         <width>79</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 10px;
+color: rgb(255, 255, 255);
+font: 25 10pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_openSV">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>60</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 15px;
+color: rgb(255, 255, 255);
+font: 25 13pt &quot;Calibri Light&quot;;
+border:  2px solid rgb(69, 229, 139);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>OPEN</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_serialSV">
+       <property name="geometry">
+        <rect>
+         <x>760</x>
+         <y>20</y>
+         <width>16</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 4px;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>myMapLayers</class>
+   <extends>QGraphicsView</extends>
+   <header>mymaplayers.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="Resources/qml.qrc"/>
+ </resources>
+ <connections/>
+</ui>

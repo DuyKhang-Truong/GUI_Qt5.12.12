@@ -1,0 +1,14 @@
+release/accesstonet.o
+release/astaralgorithm.o
+release/json.o
+release/main.o
+release/mainwindow.o
+release/mymaplayers.o
+release/mytcpclient.o
+release/radarscan.o
+release/qrc_qml.o
+release/qrc_resourceRadarScan.o
+release/moc_accesstonet.o
+release/moc_mainwindow.o
+release/moc_mymaplayers.o
+release/moc_mytcpclient.o

@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/NextAndBack">
+        <file>back.png</file>
+        <file>next.png</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>left.png</file>
+        <file>leftDis.png</file>
+        <file>right.png</file>
+        <file>rightDis.png</file>
+        <file>straight.png</file>
+        <file>straightDis.png</file>
+        <file>clearError.png</file>
+        <file>dir.png</file>
+        <file>dirDis.png</file>
+        <file>horn.png</file>
+        <file>plusSteering.png</file>
+        <file>steeringWheel.png</file>
+        <file>turnLeft.png</file>
+        <file>turnRight.png</file>
+        <file>minusSteering.png</file>
+        <file>light.png</file>
+        <file>car.ico</file>
+        <file>GPSmarker.png</file>
+        <file>GPSmarkerA.png</file>
+        <file>GPSmarkerB.png</file>
+        <file>RoadTestEditted.jpg</file>
+        <file>RoadTestMatlab.png</file>
+        <file>testDVAEditted.jpg</file>
+        <file>testDVAMatlab.png</file>
+        <file>testKTX.jpg</file>
+        <file>testKTXMatlab.png</file>
+        <file>Road27A.png</file>
+        <file>Road27AMatlab.png</file>
+        <file>BK.png</file>
+        <file>BKMatlab.png</file>
+    </qresource>
+</RCC>
